@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-xsslab5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab5/" class="article-date">
+  <time datetime="2022-04-21T15:20:25.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab5/">xsslab5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>nclick被过滤成了o_nclick，意味着我们不能够使用onclick这个事件，所有的js事件都带有on，所以我们不能够使用事件进行xss注入；接着我们试一试之前的js标签注入</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab5/" data-id="cl295v1l4000a20ub0sh59yp5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xsslab4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab4/" class="article-date">
+  <time datetime="2022-04-21T15:18:23.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab4/">xsslab4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>后台源码的value值是用双引号包起来的，因此我们先将上一题的payload单引号换成双引号注入一下试试，成功</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab4/" data-id="cl295v1l3000920ub04fs2ytk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xsslab3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab3/" class="article-date">
+  <time datetime="2022-04-21T15:17:22.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab3/">xsslab3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js的标签被进行了html编码，但是标签肯定都是带有&lt;&gt;的，因此这里我们就不能够使用前面的js标签来进行注入，同时我们也看到单引号是没有被注释的，因此我们先通过闭合value的值，再采取事件的方式进行注入</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab3/" data-id="cl295v1l1000820ub336ma1tp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xsslab2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab2/" class="article-date">
+  <time datetime="2022-04-21T15:15:49.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab2/">xsslab2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>查看后台源码可以看到test是通过GET的方式从文本框输入，并且显示在&lt; h2 &gt;标签中，因此我们注入的点是在value中，但此时我们如果在value中输入script语句的话，会被当成是value的值，所以我们要先用”&gt;来过滤value的值，在通过script标签进行alert的输入，因此payload也就很简单了，”&gt;<script>alert("ysys");</script>，通过这种方式注入就可以正确进入下一关了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab2/" data-id="cl295v1l1000720uba7eb3pk1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xsslab1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab1/" class="article-date">
+  <time datetime="2022-04-21T15:14:39.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab1/">xsslab1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>get型注，在url中的name字段中输入，输入的内容会在页面回显。显示内容是在html标签之间，所以采用标签注入：<br>name=<script>alert(1)</script><br>弹出消息框，存在xss漏洞<br>通过get型，获得name参数，然后在注入js代码</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab1/" data-id="cl295v1kt000120ub45ig5kv4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文件检测16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/%E6%96%87%E4%BB%B6%E6%A3%80%E6%B5%8B16/" class="article-date">
+  <time datetime="2022-04-21T15:07:41.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/%E6%96%87%E4%BB%B6%E6%A3%80%E6%B5%8B16/">文件检测16</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过函数exif_imagetype()函数获得图片文件的类型，从而实现文件白名单的过滤操作。不能抓包改包实现，依旧使用图片马合成。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/%E6%96%87%E4%BB%B6%E6%A3%80%E6%B5%8B16/" data-id="cl2953k6g000fx8ub17m1h3cp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文件上传15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A015/" class="article-date">
+  <time datetime="2022-04-21T15:06:54.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A015/">文件上传15</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>getimagesize()类型验证<br>通过getimagesize()函数来实现对文件类型的识别判断。也就是说用burpsuit改包的方法操作就复杂了，直接合成一张木马图上传即可(与十四相同)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A015/" data-id="cl2953k6f000ex8ub0x37g7aq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文件上传14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A014/" class="article-date">
+  <time datetime="2022-04-21T15:05:24.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A014/">文件上传14</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文件头检测<br>利用图片马还需要结合文件包含漏洞，所以本题只需要上传三种图片格式的文件码就行了。<br>制作图片马方法：<br>copy normal.jpg /b + shell.php /a webshell.jpg<br>直接通过抓包改包也可以直接上传只修改了后缀的一句话木马php文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A014/" data-id="cl2953k6f000dx8ub3ta75ll5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文件上传13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A013/" class="article-date">
+  <time datetime="2022-04-21T15:03:01.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A013/">文件上传13</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文件头检测<br>绕过文件头检查，添加GIF图片的文件头GIF89a，绕过GIF图片检查</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A013/" data-id="cl2953k6d000cx8ub8uppf8hw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-文件上传12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A012/" class="article-date">
+  <time datetime="2022-04-21T15:01:48.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A012/">文件上传12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文件路径%00截断<br>通过抓包截断将【evil.php.jpg】后面的一个【.】换成【0x00】。在上传的时候，当文件系统读到【0x00】时，会认为文件已经结束，从而将【evil.php.jpg】的内容写入到【evil.php】中，从而达到攻击的目的。</p>
+<p>截断条件：<br>php版本小于5.3.4 详情关注CVE-2006-7243<br>php的magic_quotes_gpc为OFF状态</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A012/" data-id="cl2953k6c000bx8ub7b1m1l3f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/21/xsslab15/">xsslab15</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/21/xsslab14/">xsslab14</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/21/xsslab13/">xsslab13</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/21/xsslab12/">xsslab12</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/21/xsslab11/">xsslab11</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

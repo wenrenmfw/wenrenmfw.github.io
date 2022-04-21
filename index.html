@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-sql注入lesson18" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab15" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson18/" class="article-date">
-  <time datetime="2022-04-01T03:09:19.000Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/21/xsslab15/" class="article-date">
+  <time datetime="2022-04-21T15:29:28.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson18/">sql注入lesson18</a>
+      <a class="article-title" href="/2022/04/21/xsslab15/">xsslab15</a>
     </h1>
   
 
@@ -86,12 +86,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lesson18<br>第一步,判断注入方式<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u22tiwvoj30gn06hwft.jpg"><br>第二步,获取所有数据库<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0u24e1r9rj30g103ct9f.jpg"><br>第三步,获取所有表<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u2582zwvj30g103ct9f.jpg"><br>第四步,获取所有字段<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u263yel6j30gj03cjs5.jpg"><br>第五步,获取账号密码<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0u26roro9j30gj03bt99.jpg"></p>
+        <p>html代码很少，找不到注入点，也不知道变量名，也没有提示，所以只能查看源代码<br>通过试探，发现所有的输入都会被注视到 ngInclude: 1 之后，所以先了解一下 ngInclude它的作用<br>ng-include 指令用于包含外部的 HTML 文件。<br>包含的内容将作为指定元素的子节点。<br>ng-include 属性的值可以是一个表达式，返回一个文件名。<br>默认情况下，包含的文件需要包含在同一个域名下。<br>也就是说它的参数是一个html页面<br>发现在该页面会加载level1的页面，我们在15页面里面是没有注入点，但是在1页面里面有，尝试在1里面注入<br>并没有被执行，因为通过htmlspecialchars($str)函数，有些特殊字符被转码了，转为了html实体，所以我们采用其他标签的事件属性触发</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson18/" data-id="cl1fv9eem0001igubbel877k1" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab15/" data-id="cl295v1l0000620ub5w8x4if6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -101,10 +101,10 @@
 
 
   
-    <article id="post-sql注入lesson6" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab14" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson6/" class="article-date">
-  <time datetime="2022-04-01T03:00:38.000Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/21/xsslab14/" class="article-date">
+  <time datetime="2022-04-21T15:28:52.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -115,7 +115,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson6/">sql注入lesson6</a>
+      <a class="article-title" href="/2022/04/21/xsslab14/">xsslab14</a>
     </h1>
   
 
@@ -123,12 +123,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lesson6<br>第一步、判断注入点<br>双引号注入<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0u1gnj4lxj31hc0u0djr.jpg"><br>第二步 获取所有数据库<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u1i89vejj31hc0u0gpf.jpg"><br>获取 security 库的所有表<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u1kyzb2sj31hc0u0wia.jpg"><br>获取 users 表的所有字段<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0u1m7ojllj31hc0u0781.jpg"><br>获取数据库用户的密码<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u1myssehj31hc0u0djd.jpg"></p>
+        <p>这一关，没有注入点，整个页面是一个静态页面</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson6/" data-id="cl1fv9eep0003igubck18c4l8" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab14/" data-id="cl295v1kz000520ub422d2w5i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,10 +138,10 @@
 
 
   
-    <article id="post-sql注入lesson5" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson5/" class="article-date">
-  <time datetime="2022-04-01T02:51:16.000Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/21/xsslab13/" class="article-date">
+  <time datetime="2022-04-21T15:28:11.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -152,7 +152,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson5/">sql注入lesson5</a>
+      <a class="article-title" href="/2022/04/21/xsslab13/">xsslab13</a>
     </h1>
   
 
@@ -160,12 +160,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lesson5<br>第一步、判断注入点<br>地址栏输入：?id=1’<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u16q1abqj31hc0u0tck.jpg"><br>第二步、判断报错报错函数是否可用<br>地址栏输入：?id=0’ and updatexml(1,0x7e,3) – a<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0u189y5hzj31hc0u0tc3.jpg"><br>第三步 获取所有数据库<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u19szjivj31hc0u0n0t.jpg"><br>获取 security 库中的所有表<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u1ai8r36j31hc0u0428.jpg"><br> 获取 users 表中的所有字段<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u1bk39efj31hc0u0n0u.jpg"><br>获取密码<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u1cxzu34j31hc0u0djx.jpg"></p>
+        <p>这里又是cookie，老方法试一下，我这里文件出问题了没有出来，看wp与前两题思路一样</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson5/" data-id="cl1fv9een0002igub3na1etq4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab13/" data-id="cl295v1ky000420ub7dtd087n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,10 +175,10 @@
 
 
   
-    <article id="post-sql注入lesson4" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab12" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson4/" class="article-date">
-  <time datetime="2022-04-01T02:34:28.000Z" itemprop="datePublished">2022-04-01</time>
+    <a href="/2022/04/21/xsslab12/" class="article-date">
+  <time datetime="2022-04-21T15:27:30.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -189,7 +189,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson4/">sql注入lesson4</a>
+      <a class="article-title" href="/2022/04/21/xsslab12/">xsslab12</a>
     </h1>
   
 
@@ -197,12 +197,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lesson4<br>第一步、判断注入类型<br>地址栏输入 ?id=1”) and 1 – a，页面正常显示<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u0rs04h9j31hc0u0whw.jpg"><br>地址栏输入 ?id=1”) and 0 – a，页面异常（空）显示<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u0tuxt48j31hc0u0juf.jpg"><br>第二步、判断字段数<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0u0vpfcjqj31hc0u041r.jpg"><br>第三步、判断显示位<br>地址栏输入 ?id=-1”) union select 1,2,3 – a<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u0x0wtipj31hc0u0tc3.jpg"><br>第四步 获取所有数据库<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0u0yppsavj31hc0u0q7a.jpg"><br>获取 security 库的所有表<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0u116lxizj31hc0u0784.jpg"><br>获取 users 表的所有字段<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0u12r2jymj31hc0u0q6p.jpg"><br>获取数据库用户的密码<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0u14c7n3dj31hc0u0wi2.jpg"></p>
+        <p>这题这里又是ua，也就是User-agent，<br>我们继续判断是在User-agent处进行xss，抓包处理，确实如此<br>直接在UA后面添加就可<br> 放包通过</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson4/" data-id="cl1fv9eeh0000igub7plxfh5r" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab12/" data-id="cl295v1kw000320ub1ojn90yk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,10 +212,10 @@
 
 
   
-    <article id="post-sql注入lesson3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab11" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson3/" class="article-date">
-  <time datetime="2022-03-25T04:58:28.000Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/21/xsslab11/" class="article-date">
+  <time datetime="2022-04-21T15:26:44.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -226,7 +226,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson3/">sql注入lesson3</a>
+      <a class="article-title" href="/2022/04/21/xsslab11/">xsslab11</a>
     </h1>
   
 
@@ -234,12 +234,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>sql注入lesson3<br>1.判断注入点<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0m1lg7i7ij31hc0u0adg.jpg"><br>2.判断字段数<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0m1nx9cnwj31hc0u0adn.jpg"><br>3.判断显示位<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0m1okw6ngj31hc0u00wg.jpg"><br>4.获取所有数据库<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0m1p64okfj31hc0u0aer.jpg"><br>5.获取 security 库中的所有表<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0m1q3c9l0j31hc0u0dk0.jpg"><br>6.获取 users 表中的所有字段<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0m1qx003nj31hc0u0jvk.jpg"><br>7.获得密码<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0m1ru3eo4j31hc0u0dk5.jpg"><br>完成密码获取</p>
+        <p>抓到数据包后在里面添加referer头可以实现input注入<br>然后放包就行了</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson3/" data-id="cl15yrq6g0000psub1e4teouj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab11/" data-id="cl295v1kv000220ub86bl8me1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,10 +249,10 @@
 
 
   
-    <article id="post-sql注入lesson2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab10" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson2/" class="article-date">
-  <time datetime="2022-03-25T04:31:27.000Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/21/xsslab10/" class="article-date">
+  <time datetime="2022-04-21T15:25:19.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -263,7 +263,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson2/">sql注入lesson2</a>
+      <a class="article-title" href="/2022/04/21/xsslab10/">xsslab10</a>
     </h1>
   
 
@@ -271,12 +271,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>sql注入lesson2<br>1.未注入的初始状态<br><img src="https://tva4.sinaimg.cn/large/008eq3nBly8h0m0vuiyw4j31hc0u0gp8.jpg"><br>2.第一步，判断注入点<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0m0xa0i1dj31hc0u0tc5.jpg"><br>3.第二步、判断字段数<br>第四列不存在<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0m0z50dy8j31hc0u0q6k.jpg"><br>4.第三步、判断显示位<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0m0zrz0fuj31hc0u0djm.jpg"><br>5.第四步  获取所有数据库<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0m1dd7mbhj31hc0u00xh.jpg"><br> 获取secutiry库的所有表<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0m1dx34t8j31hc0u0n1e.jpg"><br>获取 users 表的所有字段<br><img src="https://tva1.sinaimg.cn/large/008eq3nBly8h0m1evnt4dj31hc0u042o.jpg"><br>获取数据库用户的密码<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0m1fldxi0j31hc0u0gpl.jpg"><br>完成密码获取</p>
+        <p>这一没有输入的地方，需要在url地址栏中输入，这一时输入是隐藏的，也就是说keyname并不是要注入的地方，真正注入的地方是三个input，不过这三个被隐藏了，所以需要去试探这三个那个是正确的<br>界面没有输入点，input被隐藏了<br>12删除hidden,因为尖括号被过滤了，所以使用事件<br>“type=”text” onclick=”alert(1)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson2/" data-id="cl15xf0qt000180ubekfa6xdf" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab10/" data-id="cl295v1kp000020ubh0krfy95" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,10 +286,10 @@
 
 
   
-    <article id="post-sql注入lesson1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab9" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson1/" class="article-date">
-  <time datetime="2022-03-25T01:17:31.000Z" itemprop="datePublished">2022-03-25</time>
+    <a href="/2022/04/21/xsslab9/" class="article-date">
+  <time datetime="2022-04-21T15:24:33.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -300,7 +300,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson1/">sql注入lesson1</a>
+      <a class="article-title" href="/2022/04/21/xsslab9/">xsslab9</a>
     </h1>
   
 
@@ -308,12 +308,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>lesson1<br>1.sql注入前初始状态<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0lwyt1pswj30dw07t74b.jpg"><br>2.第一步，判断注入点<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0ly9cgcgnj31hc0u0776.jpg"><br>3.第二步，判断列数<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0lybfnpk9j31hc0u0acz.jpg"><br>在第四列的时候，报错<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0lycvjzetj31hc0u0act.jpg"><br>4.判断显示位<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0lyetimkwj31hc0u0q5s.jpg"><br>5.获取所有表<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0lyfvmktdj31hc0u0q69.jpg"><br>6获取所有字段<br><img src="https://tva2.sinaimg.cn/large/008eq3nBly8h0lygoz5fnj31hc0u0n0e.jpg"><br>7.获取所有字段密码<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h0lyhvmwvtj31hc0u0gqk.jpg"><br>得到所有字段密码，完成实验</p>
+        <p>通过试探，这一关与上一关不同的是会在上一关的基础上，加入地址的检查，首先判断会检查哪些内容，这一关会检查输入的数据中是否会有http：//字段，所以需要在输入的字段中加入该字段</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson1/" data-id="cl15xdc8b000080ub9fcg142d" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab9/" data-id="cl295v1l9000e20ub1jxaeal5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -323,10 +323,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xsslab8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/13/hello-world/" class="article-date">
-  <time datetime="2022-03-13T15:55:53.557Z" itemprop="datePublished">2022-03-13</time>
+    <a href="/2022/04/21/xsslab8/" class="article-date">
+  <time datetime="2022-04-21T15:23:23.000Z" itemprop="datePublished">2022-04-21</time>
 </a>
     
   </div>
@@ -337,7 +337,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/13/hello-world/">Hello World</a>
+      <a class="article-title" href="/2022/04/21/xsslab8/">xsslab8</a>
     </h1>
   
 
@@ -345,24 +345,86 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>通过试探，发现无法构造闭合，采用是采用了htmlspecialchars($str)函数，而且闭合方式是双引号，所以input中无法注入，但是在连接里面是有地方可以注入的，首先是试探是否有防御机制：<br>这一关基本过滤了所以关键字和大小写，所以采用html实体编码</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/13/hello-world/" data-id="cl0pgn8aq0000t4ubg0isakf6" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/21/xsslab8/" data-id="cl295v1l7000d20ubcaayctyj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xsslab7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab7/" class="article-date">
+  <time datetime="2022-04-21T15:22:30.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab7/">xsslab7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本关与上一关的不同，在于转换后的内容不同，虽然添加了大小写转换，但是因为转换后，字符被转换为空字符，所以转换后的字符如何仍可以组合成，那么就可以绕过该防御机制</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab7/" data-id="cl295v1l6000c20ub85py344y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xsslab6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/xsslab6/" class="article-date">
+  <time datetime="2022-04-21T15:21:58.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/xsslab6/">xsslab6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过试探，和上一关很相似，采用上一关的做法，发现href也被过滤了，但是这一关没有过滤大小写，所有的标签都可以用，只要换成大写，或大小写混合就可以了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/21/xsslab6/" data-id="cl295v1l5000b20ub17x41s5c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,6 +435,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -403,23 +470,23 @@
       <ul>
         
           <li>
-            <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson18/">sql注入lesson18</a>
+            <a href="/2022/04/21/xsslab15/">xsslab15</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson6/">sql注入lesson6</a>
+            <a href="/2022/04/21/xsslab14/">xsslab14</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson5/">sql注入lesson5</a>
+            <a href="/2022/04/21/xsslab13/">xsslab13</a>
           </li>
         
           <li>
-            <a href="/2022/04/01/sql%E6%B3%A8%E5%85%A5lesson4/">sql注入lesson4</a>
+            <a href="/2022/04/21/xsslab12/">xsslab12</a>
           </li>
         
           <li>
-            <a href="/2022/03/25/sql%E6%B3%A8%E5%85%A5lesson3/">sql注入lesson3</a>
+            <a href="/2022/04/21/xsslab11/">xsslab11</a>
           </li>
         
       </ul>
