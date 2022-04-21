@@ -86,7 +86,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>html代码很少，找不到注入点，也不知道变量名，也没有提示，所以只能查看源代码<br>通过试探，发现所有的输入都会被注视到 ngInclude: 1 之后，所以先了解一下 ngInclude它的作用<br>ng-include 指令用于包含外部的 HTML 文件。<br>包含的内容将作为指定元素的子节点。<br>ng-include 属性的值可以是一个表达式，返回一个文件名。<br>默认情况下，包含的文件需要包含在同一个域名下。<br>也就是说它的参数是一个html页面<br>发现在该页面会加载level1的页面，我们在15页面里面是没有注入点，但是在1页面里面有，尝试在1里面注入<br>并没有被执行，因为通过htmlspecialchars($str)函数，有些特殊字符被转码了，转为了html实体，所以我们采用其他标签的事件属性触发</p>
+        <p>html代码很少，找不到注入点，也不知道变量名，也没有提示，所以只能查看源代码<br>通过试探，发现所有的输入都会被注视到 ngInclude: 1 之后，所以先了解一下 ngInclude它的作用<br>ng-include 指令用于包含外部的 HTML 文件。<br>包含的内容将作为指定元素的子节点。<br>ng-include 属性的值可以是一个表达式，返回一个文件名。<br>默认情况下，包含的文件需要包含在同一个域名下。<br>也就是说它的参数是一个html页面<br>发现在该页面会加载level1的页面，我们在15页面里面是没有注入点，但是在1页面里面有，尝试在1里面注入<br>并没有被执行，因为通过htmlspecialchars($str)函数，有些特殊字符被转码了，转为了html实体，所以我们采用其他标签的事件属性触发<br><img src="https://tva3.sinaimg.cn/large/008eq3nBly8h1hs1r967oj315x0i5425.jpg"></p>
 
       
     </div>
